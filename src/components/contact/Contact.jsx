@@ -44,7 +44,7 @@ const Contact = () => {
                     </div>
                     <div className="c-info-item">
                         <img src={Email} alt="" className="c-icon" />
-                        contact@gordonshryock.dev
+                        contact@emailDOTdev
                     </div>
                     <div className="c-info-item">
                         <img src={Address} alt="" className="c-icon" />
@@ -54,8 +54,8 @@ const Contact = () => {
             </div>
             <div className="c-right">
                 <p className="c-desc">
-                    <b>What's your story?</b> Get in touch. Always available for
-                    freelancing if the right project comes along. me.
+                    <b>Looking for inspiration?</b> Get in touch. Always available for
+                    freelancing if the right project comes along.
                 </p>
                 <form ref={formRef} onSubmit={handleSubmit} >
                     <input style={{backgroundColor: darkMode && "#333"}} type="text" placeholder="Name" name="user_name" />
