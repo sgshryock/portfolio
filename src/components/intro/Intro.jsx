@@ -14,8 +14,8 @@ const Intro = () => {
                             <div className="i-title-item">Dot Net Developer</div>
                             <div className="i-title-item">SQL Admin</div>
                             <div className="i-title-item">Designer</div>
-                            <div className="i-title-item">3d Printing</div>
                             <div className="i-title-item">Project Manager</div>
+                            <div className="i-title-item">3D Printing Fanatic</div>
                         </div>
                     </div>
                     <p className="i-desc">
