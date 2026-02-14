@@ -12,7 +12,7 @@ const Contact = () => {
           <p className="contact-desc">
             Have a question or want to work together? Feel free to reach out.
           </p>
-          <a href="mailto:sgshryock@outlook.com" className="contact-email-btn">
+          <a href="mailto:gordon@shryock.io" className="contact-email-btn">
             Say Hello
           </a>
           <div className="contact-socials">
