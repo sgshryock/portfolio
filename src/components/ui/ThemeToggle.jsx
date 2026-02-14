@@ -25,7 +25,6 @@ const ThemeToggle = () => {
           </svg>
         </span>
         <div
-          className="toggle-thumb"
           className={`toggle-thumb ${darkMode ? 'thumb-right' : ''}`}
         />
       </div>
