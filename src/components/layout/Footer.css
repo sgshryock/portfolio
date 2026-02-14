@@ -13,3 +13,9 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
 }
+
+.footer-credit {
+  margin-top: var(--gap-sm);
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
+}
