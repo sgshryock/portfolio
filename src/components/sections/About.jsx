@@ -1,5 +1,5 @@
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import realMe from '../../img/realme.jpg';
+import portrait from '../../img/portrait.jpg';
 import './About.css';
 
 const About = () => {
@@ -11,7 +11,7 @@ const About = () => {
         <div className={`about-grid ${visible ? 'fade-in' : 'fade-in-hidden'}`} ref={ref}>
           <div className="about-image-wrapper">
             <div className="about-image glass">
-              <img src={realMe} alt="Gordon Shryock" />
+              <img src={portrait} alt="Gordon Shryock" />
             </div>
           </div>
           <div className="about-text">

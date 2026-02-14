@@ -1,5 +1,5 @@
 import './Hero.css';
-import heroImg from '../../img/nightmountainsheader.jpeg';
+import heroImg from '../../img/florida-palms-hero.jpg';
 
 const Hero = () => {
   return (

@@ -12,7 +12,7 @@
 
 .about-image img {
   width: 100%;
-  max-height: 400px;
+  max-height: 500px;
   border-radius: calc(var(--radius-lg) - 4px);
   object-fit: cover;
 }
