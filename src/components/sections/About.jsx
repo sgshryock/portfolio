@@ -17,16 +17,16 @@ const About = () => {
           <div className="about-text">
             <h2 className="section-title">About Me</h2>
             <p className="about-bio">
-              I'm the VP of Development at Florida Credit Union, where I lead a
-              team focused on building scalable financial solutions and driving
-              operational excellence. Over 8+ years at FCU, I've grown from
-              Developer to AVP to VP, working hands-on with MSSQL, PowerShell,
-              PowerOn, SSRS, Crystal Reports, and OpCon.
+              I lead development teams in the financial services industry,
+              building enterprise systems that automate operations and scale
+              with the business. Over the past 8+ years, I've grown from
+              writing code to leading the people who write it — and I still
+              get my hands dirty with SQL, PowerShell, and whatever tool gets
+              the job done.
             </p>
             <p className="about-bio">
-              Outside of work, I'm continuing my education in software development
-              and computer science, and spending time with 3D printing, homelab
-              projects, and picking up new technologies.
+              Outside of work, I'm pursuing a degree in software development,
+              running a homelab, 3D printing, and always picking up something new.
             </p>
           </div>
         </div>

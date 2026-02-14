@@ -5,16 +5,17 @@
   right: 0;
   z-index: 1000;
   padding: 16px 5%;
-  transition: background var(--transition-base), box-shadow var(--transition-base),
-    backdrop-filter var(--transition-base);
+  transition: box-shadow var(--transition-base), padding var(--transition-base);
   background: var(--nav-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .nav {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);
 }
 
 .nav-scrolled {
-  background: var(--nav-bg-scrolled);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  box-shadow: var(--glass-shadow);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   padding: 12px 5%;
 }
 
@@ -29,13 +30,9 @@
 .nav-logo {
   font-size: var(--font-size-2xl);
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-heading);
   letter-spacing: -1px;
   transition: color var(--transition-base);
-}
-
-.nav-scrolled .nav-logo {
-  color: var(--color-heading);
 }
 
 .nav-logo:hover {
@@ -51,14 +48,10 @@
 .nav-link {
   font-size: var(--font-size-sm);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-secondary);
   position: relative;
   padding: 4px 0;
   transition: color var(--transition-base);
-}
-
-.nav-scrolled .nav-link {
-  color: var(--color-text-secondary);
 }
 
 .nav-link::after {
@@ -74,11 +67,6 @@
 
 .nav-link:hover,
 .nav-link.active {
-  color: #ffffff;
-}
-
-.nav-scrolled .nav-link:hover,
-.nav-scrolled .nav-link.active {
   color: var(--color-heading);
 }
 
@@ -102,12 +90,8 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: #ffffff;
-  transition: transform var(--transition-base), opacity var(--transition-base), background var(--transition-base);
-}
-
-.nav-scrolled .nav-hamburger span {
   background: var(--color-text);
+  transition: transform var(--transition-base), opacity var(--transition-base);
 }
 
 .nav-hamburger.open span:nth-child(1) {
@@ -149,8 +133,6 @@
     flex-direction: column;
     justify-content: center;
     background: var(--color-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     transition: right var(--transition-base);
     gap: var(--gap-xl);
     z-index: 1000;
