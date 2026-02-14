@@ -1,0 +1,31 @@
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap-lg);
+}
+
+.skills-category {
+  padding: var(--gap-lg);
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.skills-category-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-heading);
+  margin-bottom: var(--gap-md);
+  font-weight: 600;
+}
+
+.skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-sm);
+}
+
+@media (max-width: 768px) {
+  .skills-category {
+    width: 100%;
+  }
+}

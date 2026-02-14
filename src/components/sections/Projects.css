@@ -1,0 +1,17 @@
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap-lg);
+}
+
+.projects-grid > * {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .projects-grid > * {
+    width: 100%;
+  }
+}

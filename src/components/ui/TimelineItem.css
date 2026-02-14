@@ -1,0 +1,227 @@
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: var(--gap-xl);
+}
+
+/* Main timeline vertical line */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--color-accent);
+  opacity: 0.35;
+}
+
+.timeline-item:last-child::before {
+  bottom: auto;
+  height: 16px;
+  transition: height 0.5s ease;
+}
+
+.timeline-item:last-child.marker-filled::before {
+  height: 100%;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -1px;
+  top: 4px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 3px solid;
+  background: var(--color-bg);
+  z-index: 2;
+  transition: background var(--transition-base);
+}
+
+.timeline-marker.work {
+  border-color: var(--timeline-work);
+}
+
+.timeline-marker.education {
+  border-color: var(--timeline-education);
+}
+
+.timeline-item.marker-filled .timeline-marker.work {
+  background: var(--timeline-work);
+}
+
+.timeline-item.marker-filled .timeline-marker.education {
+  background: var(--timeline-education);
+}
+
+.timeline-content {
+  padding: var(--gap-lg);
+}
+
+.timeline-period {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.timeline-title {
+  font-size: var(--font-size-xl);
+  color: var(--color-heading);
+  margin: var(--gap-sm) 0 4px;
+}
+
+.timeline-org {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--gap-sm);
+}
+
+.timeline-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Expandable card */
+.timeline-content.expandable {
+  cursor: pointer;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.timeline-content.expandable:hover {
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  transform: translateX(6px);
+}
+
+.timeline-expand-indicator {
+  margin-top: var(--gap-md);
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.timeline-expand-text {
+  font-size: var(--font-size-sm);
+}
+
+/* Branch diagram — branches connect to the main timeline line */
+.timeline-branches-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.timeline-branches-wrapper.branches-visible {
+  grid-template-rows: 1fr;
+}
+
+.timeline-branches {
+  position: relative;
+  margin-left: -28px;
+  overflow: hidden;
+}
+
+.timeline-branches-wrapper.branches-visible .timeline-branches {
+  padding-top: var(--gap-md);
+}
+
+/* Each branch node */
+.branch-node {
+  position: relative;
+  padding-left: 44px;
+  padding-bottom: var(--gap-md);
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.branches-visible .branch-node {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Horizontal arm from main line to card */
+.branch-arm {
+  position: absolute;
+  left: 2px;
+  top: 16px;
+  width: 32px;
+  height: 3px;
+  border-radius: 1.5px;
+  background: var(--color-accent);
+  opacity: 0.35;
+}
+
+/* Dot at the junction on the main line */
+.branch-dot {
+  position: absolute;
+  left: -3px;
+  top: 11px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 2px solid var(--color-bg);
+  z-index: 2;
+}
+
+/* Branch card */
+.branch-card {
+  padding: 10px 16px;
+}
+
+.branch-card p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.timeline-type-badge {
+  display: inline-block;
+  margin-top: var(--gap-md);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.timeline-type-badge.work {
+  background: rgba(67, 56, 202, 0.12);
+  color: #3730a3;
+}
+
+.timeline-type-badge.education {
+  background: rgba(4, 120, 87, 0.12);
+  color: #065f46;
+}
+
+[data-theme="dark"] .timeline-type-badge.work {
+  background: rgba(139, 131, 255, 0.15);
+  color: #8b83ff;
+}
+
+[data-theme="dark"] .timeline-type-badge.education {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+@media (max-width: 768px) {
+  .timeline-content {
+    padding: var(--gap-md);
+  }
+
+  .branch-card {
+    padding: 8px 12px;
+  }
+
+  .branch-node {
+    padding-left: 40px;
+  }
+}

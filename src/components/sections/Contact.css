@@ -1,0 +1,58 @@
+.contact-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 50px;
+  text-align: center;
+}
+
+.contact-desc {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--gap-xl);
+  line-height: 1.7;
+}
+
+.contact-email-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: var(--color-accent);
+  color: #ffffff;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 15px var(--color-accent-shadow-40);
+}
+
+.contact-email-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--color-accent-shadow-50);
+  color: #ffffff;
+}
+
+.contact-socials {
+  margin-top: var(--gap-xl);
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-lg);
+}
+
+.contact-social-link {
+  font-size: var(--font-size-base);
+  color: var(--color-accent);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2px;
+  border-bottom: 1px solid currentColor;
+  transition: color var(--transition-fast);
+}
+
+.contact-social-link:hover {
+  color: var(--color-accent-hover);
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 40px 24px;
+  }
+}

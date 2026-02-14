@@ -1,0 +1,18 @@
+.skill-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: var(--glass-border);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  font-weight: 500;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.skill-badge:hover {
+  transform: translateY(-2px);
+  background: var(--glass-bg-strong);
+}

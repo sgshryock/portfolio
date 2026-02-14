@@ -1,0 +1,58 @@
+export const experienceData = [
+  {
+    type: "work",
+    title: "VP of Development",
+    organization: "Florida Credit Union",
+    organizationUrl: "https://www.flcu.org",
+    period: "Mar 2025 — Present",
+    description: "Oversee strategic planning, implementation, and management of development initiatives. Lead the Development Team in delivering scalable financial solutions, aligning efforts with organizational growth and member service goals.",
+    highlights: [
+      "Lead development team in strategic planning and execution of technology initiatives",
+      "Drive scalable financial solutions aligned with organizational growth goals",
+      "Collaborate across all leadership levels to align development with credit union mission",
+      "Foster a culture of continuous improvement using market insights and member feedback",
+    ],
+  },
+  {
+    type: "work",
+    title: "AVP of Development",
+    organization: "Florida Credit Union",
+    organizationUrl: "https://www.flcu.org",
+    period: "Jan 2021 — Mar 2025",
+    description: "Managed development operations and team growth, driving process improvements and cross-departmental collaboration to enhance member services.",
+    highlights: [
+      "Managed and grew the development team through hiring and mentorship",
+      "Drove process improvements across development workflows",
+      "Led cross-departmental collaboration initiatives",
+      "Promoted from Developer to AVP based on technical and leadership contributions",
+    ],
+  },
+  {
+    type: "work",
+    title: "Developer",
+    organization: "Florida Credit Union",
+    organizationUrl: "https://www.flcu.org",
+    period: "Dec 2017 — Jan 2021",
+    description: "Built and maintained solutions using MSSQL, PowerOn, SSRS, Crystal Reports, and SharePoint. Developed reporting and automation tools to support credit union operations.",
+    highlights: [
+      "Developed and maintained MSSQL databases and stored procedures",
+      "Built automated reporting with SSRS and SAP Crystal Reports",
+      "Created PowerOn solutions for core banking system",
+      "Managed SharePoint environment and internal tooling",
+    ],
+  },
+  {
+    type: "work",
+    title: "Planning & Configuration Management Lead",
+    organization: "Veterans Trading Co",
+    organizationUrl: "https://vtcusa.com/",
+    period: "Feb 2015 — Dec 2017",
+    description: "Led buy/make planning, process scheduling, and configuration control management. Maintained revision-controlled documentation and developed internal databases.",
+    highlights: [
+      "Led buy/make planning and production process scheduling",
+      "Managed configuration control and revision-controlled documentation",
+      "Developed and maintained internal databases",
+      "Audited documentation for accuracy and facilitated change activities",
+    ],
+  },
+];

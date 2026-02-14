@@ -1,0 +1,90 @@
+:root {
+  /* Colors - Light */
+  --color-bg: #f0f4f8;
+  --color-surface: #ffffff;
+  --color-text: #111827;
+  --color-text-secondary: #374151;
+  --color-accent: #5548e5;
+  --color-accent-hover: #4338ca;
+  --color-heading: #030712;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-strong: rgba(255, 255, 255, 0.7);
+  --glass-blur: 16px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+
+  /* Navigation */
+  --nav-bg: rgba(255, 255, 255, 0.1);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.75);
+
+  /* Spacing */
+  --section-padding: 100px 5%;
+  --container-max: 1200px;
+  --gap-sm: 0.5rem;
+  --gap-md: 1rem;
+  --gap-lg: 2rem;
+  --gap-xl: 3rem;
+
+  /* Typography */
+  --font-family: 'Inter', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3.5rem;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Accent shadows */
+  --color-accent-shadow-40: rgba(85, 72, 229, 0.4);
+  --color-accent-shadow-50: rgba(85, 72, 229, 0.5);
+  --color-accent-gradient-start: #4338ca;
+  --color-accent-gradient-end: #5548e5;
+
+  /* Timeline */
+  --timeline-color: var(--color-accent);
+  --timeline-work: #4338ca;
+  --timeline-education: #047857;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0a0a1a;
+  --color-surface: #1a1a2e;
+  --color-text: #e0e0e0;
+  --color-text-secondary: #a0a0b0;
+  --color-accent: #8b83ff;
+  --color-accent-hover: #a59eff;
+  --color-heading: #ffffff;
+
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-bg-strong: rgba(255, 255, 255, 0.1);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  --nav-bg: rgba(10, 10, 26, 0.1);
+  --nav-bg-scrolled: rgba(10, 10, 26, 0.85);
+
+  --color-accent-shadow-40: rgba(139, 131, 255, 0.4);
+  --color-accent-shadow-50: rgba(139, 131, 255, 0.5);
+  --color-accent-gradient-start: #6366f1;
+  --color-accent-gradient-end: #8b83ff;
+
+  --timeline-work: #8b83ff;
+  --timeline-education: #34d399;
+}

@@ -1,25 +1,27 @@
-import Intro from "./components/intro/Intro"
-import About from "./components/about/About"
-import ProductList from "./components/productList/ProductList"
-import Contact from "./components/contact/Contact"
-import Toggle from "./components/toggle/Toggle"
-import { useContext } from "react"
-import { ThemeContext } from "./context"
- 
+import Navigation from "./components/layout/Navigation";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Skills from "./components/sections/Skills";
+import Projects from "./components/sections/Projects";
+import Experience from "./components/sections/Experience";
+import Education from "./components/sections/Education";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/layout/Footer";
+
 const App = () => {
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
   return (
-    <div 
-      style={{
-        backgroundColor:darkMode ? "#222" : "white", 
-        color:darkMode && "white",
-      }}>
-      <Toggle />
-      <Intro /> 
-      <About />
-      <ProductList />
-      <Contact />
+    <div>
+      <Navigation />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 };
