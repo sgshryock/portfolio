@@ -94,11 +94,11 @@ const Skills = () => {
               setPhase('idle');
               setActiveCategory(null);
               setCardStartPos(null);
-              // Wait for layout to settle, then scroll on desktop
+              // Wait for layout to settle, then scroll to the closed card
               setTimeout(() => {
                 const cardEl = cardRefs.current[closingCategory];
-                if (cardEl && !isMobile()) {
-                  cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                if (cardEl) {
+                  cardEl.scrollIntoView({ behavior: 'smooth', block: isMobile() ? 'start' : 'center' });
                 }
                 closingRef.current = false;
               }, 50);
