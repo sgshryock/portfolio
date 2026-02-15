@@ -5,27 +5,220 @@
   gap: var(--gap-lg);
 }
 
-.skills-category {
-  padding: var(--gap-lg);
-  width: 300px;
-  flex-shrink: 0;
+/* Category cards */
+.skill-card {
+  width: 280px;
+  padding: var(--gap-lg) var(--gap-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: opacity var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  user-select: none;
 }
 
-.skills-category-title {
+
+.skill-card:hover {
+  box-shadow: 0 0 10px var(--color-accent-shadow-40), 0 0 18px var(--color-accent-shadow-40);
+  border-color: var(--color-accent);
+}
+
+.skill-card-title {
   font-size: var(--font-size-lg);
   color: var(--color-heading);
-  margin-bottom: var(--gap-md);
   font-weight: 600;
+  text-align: center;
 }
 
-.skills-badges {
+.skill-card-active {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.skill-card-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card.skill-card-floating {
+  box-shadow: 0 0 10px var(--color-accent-shadow-40), 0 0 18px var(--color-accent-shadow-40);
+  border: 1px solid var(--color-accent);
+  z-index: 10;
+  transition: left 0.6s ease, top 0.6s ease, width 0.5s ease, height 0.5s ease, border-radius 0.5s ease, opacity 0.3s ease;
+}
+
+.skill-card.skill-card-circle {
+  border-radius: 50%;
+}
+
+
+
+/* Expanded wrapper — fills the grid and centers the mindmap */
+.skill-expanded-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap-sm);
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  pointer-events: none;
+}
+
+.skill-expanded-wrapper .skill-node {
+  pointer-events: auto;
+}
+
+/* Mindmap — zero-size origin, everything radiates from center */
+.skill-mindmap {
+  position: relative;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  z-index: 1;
+}
+
+.skill-mindmap-lines {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  top: -400px;
+  left: -400px;
+  overflow: visible;
+}
+
+.skill-line {
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  opacity: 0;
+}
+
+.skill-line-visible {
+  opacity: 0.35;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawLine 0.15s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.skill-line-energy {
+  stroke: var(--color-accent);
+  stroke-width: 4;
+  opacity: 0;
+  filter: drop-shadow(0 0 8px var(--color-accent));
+  stroke-dasharray: 40 500;
+  stroke-dashoffset: 0;
+  animation: energyTravel 0.18s ease forwards;
+}
+
+@keyframes energyTravel {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: -500;
+  }
+}
+
+.skill-node {
+  position: absolute;
+  padding: 8px 18px;
+  background: var(--glass-bg-strong);
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  box-shadow: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-node-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.skill-node-glow {
+  box-shadow: 0 0 10px var(--color-accent-shadow-40), 0 0 18px var(--color-accent-shadow-40);
+  border-color: var(--color-accent);
+}
+
+.skill-node:hover {
+  background: var(--color-accent);
+  color: #ffffff;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background var(--transition-fast), color var(--transition-fast);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card-hidden {
+    transition: none;
+  }
+
+  .skill-line-visible {
+    animation: none;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    opacity: 0.35;
+  }
+
+  .skill-node {
+    transition: none;
+  }
+
+  .skill-node-visible {
+    opacity: 1;
+    scale: 1;
+  }
 }
 
 @media (max-width: 768px) {
-  .skills-category {
+  .skill-card {
     width: 100%;
+  }
+
+  .skill-card:hover {
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  .skill-card:active {
+    box-shadow: 0 0 10px var(--color-accent-shadow-40), 0 0 18px var(--color-accent-shadow-40);
+    border-color: var(--color-accent);
+  }
+
+  .skill-node {
+    font-size: var(--font-size-xs);
+    padding: 6px 12px;
+  }
+
+  .skill-expanded-wrapper {
+    min-height: 400px;
+  }
+
+  .skill-mindmap-lines {
+    width: 500px;
+    height: 500px;
+    top: -250px;
+    left: -250px;
   }
 }
