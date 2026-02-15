@@ -8,7 +8,8 @@ const STEP_DELAY = 0.12; // time between each line starting
 const ENERGY_OFFSET = 0.06; // energy pulse starts after line draw begins
 const BADGE_OFFSET = 0.1; // badge appears after line draw begins
 
-const CIRCLE_SIZE = 180; // diameter of morphed circle
+const CIRCLE_SIZE_DESKTOP = 180;
+const CIRCLE_SIZE_MOBILE = 80;
 const isMobile = () => window.innerWidth <= 768;
 
 const getBadgeDims = () => {
@@ -37,8 +38,9 @@ const Skills = () => {
     const skills = skillsData[category];
     const count = skills.length;
     const mobile = isMobile();
+    // On mobile, cap radius so longest badge stays on screen
     const radius = mobile
-      ? Math.min(window.innerWidth * 0.32, 140)
+      ? Math.min(window.innerWidth / 2 - 80, 130)
       : Math.min(window.innerWidth * 0.28, 280);
     const dims = getBadgeDims();
 
@@ -108,6 +110,7 @@ const Skills = () => {
     const cardEl = cardRefs.current[category];
     if (!cardEl || !gridRef.current) return;
 
+
     const gridRect = gridRef.current.getBoundingClientRect();
     const cardRect = cardEl.getBoundingClientRect();
 
@@ -140,6 +143,10 @@ const Skills = () => {
         requestAnimationFrame(() => {
           setPhase('sliding');
           setTimeout(() => {
+            // Scroll grid center into view after card reaches position
+            if (gridRef.current) {
+              gridRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
             setPhase('morphing');
             setTimeout(() => {
               setPhase('animating');
@@ -174,6 +181,7 @@ const Skills = () => {
 
   const isExpanded = activeCategory && phase !== 'idle';
   const isClosing = phase.startsWith('closing-');
+  const circleSize = isMobile() ? CIRCLE_SIZE_MOBILE : CIRCLE_SIZE_DESKTOP;
 
   // Which phases show the card as a circle
   const isCircle = phase === 'morphing' || phase === 'animating'
@@ -239,23 +247,23 @@ const Skills = () => {
             <>
               {/* Floating card */}
               <div
-                className={`skill-card glass skill-card-floating ${isCircle ? 'skill-card-circle' : ''}`}
+                className={`skill-card glass skill-card-floating ${phase === 'closing-fade' ? 'skill-card-closing' : ''} ${isCircle ? 'skill-card-circle' : ''}`}
                 style={{
                   position: 'absolute',
-                  width: isCircleHeight ? CIRCLE_SIZE : cardStartPos.width,
+                  width: isCircleHeight ? circleSize : cardStartPos.width,
                   height: isCircleHeight
-                    ? CIRCLE_SIZE
+                    ? circleSize
                     : cardStartPos.height,
                   opacity: phase === 'closing-fade' ? 0 : 1,
                   left: isAtCenter
                     ? isCircleHeight
-                      ? cardStartPos.centerLeft + (cardStartPos.width - CIRCLE_SIZE) / 2
+                      ? cardStartPos.centerLeft + (cardStartPos.width - circleSize) / 2
                       : cardStartPos.centerLeft
                     : cardStartPos.startLeft,
                   top: !isAtCenter
                     ? cardStartPos.startTop
                     : isCircleHeight
-                      ? cardStartPos.centerTop - (CIRCLE_SIZE - cardStartPos.height) / 2
+                      ? cardStartPos.centerTop - (circleSize - cardStartPos.height) / 2
                       : cardStartPos.centerTop,
                   transition: phase === 'moving' ? 'none' : undefined,
                 }}
@@ -263,7 +271,7 @@ const Skills = () => {
                 role="button"
                 tabIndex={0}
               >
-                <h3 className="skill-card-title">{activeCategory}</h3>
+                <h3 className={`skill-card-title ${phase === 'morphing' || phase === 'closing-badges' || phase === 'closing-lines' || phase === 'closing-morph' || phase === 'closing-slide' ? 'skill-card-title-morphing' : ''}`}>{activeCategory}</h3>
               </div>
 
               {/* Mindmap */}
