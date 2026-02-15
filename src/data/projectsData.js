@@ -19,15 +19,6 @@ export const projectsData = [
   },
   {
     id: 3,
-    title: "Portfolio Site",
-    description: "This site — a modern React 18 portfolio built with Vite, glassmorphism CSS, dark mode support, and deployed to GitHub Pages.",
-    image: null,
-    link: "https://gordonshryock.dev",
-    github: "https://github.com/sgshryock/portfolio",
-    tags: ["React", "Vite", "CSS", "GitHub Pages"],
-  },
-  {
-    id: 4,
     title: "Multi-K8s",
     description: "Multi-container application deployed to Kubernetes with Docker Compose for local development, covering container orchestration, networking, and scaling.",
     image: null,
