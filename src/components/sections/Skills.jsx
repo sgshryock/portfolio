@@ -31,6 +31,7 @@ const Skills = () => {
   const [cardStartPos, setCardStartPos] = useState(null);
   const gridRef = useRef(null);
   const cardRefs = useRef({});
+  const activeCategoryRef = useRef(null);
 
   const categories = Object.entries(skillsData);
 
@@ -89,10 +90,11 @@ const Skills = () => {
           setPhase('closing-slide');
           setTimeout(() => {
             setPhase('closing-fade');
-            const closingCategory = activeCategory;
+            const closingCategory = activeCategoryRef.current;
             setTimeout(() => {
               setPhase('idle');
               setActiveCategory(null);
+              activeCategoryRef.current = null;
               setCardStartPos(null);
               // Wait for layout to settle, then scroll to the closed card
               setTimeout(() => {
@@ -144,6 +146,7 @@ const Skills = () => {
     });
 
     setActiveCategory(category);
+    activeCategoryRef.current = category;
     const { positions, endpoints } = calculatePositions(category);
     setBadgePositions(positions);
     setLineEndpoints(endpoints);

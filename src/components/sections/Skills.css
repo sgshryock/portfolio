@@ -16,6 +16,7 @@
   border: 1px solid transparent;
   transition: opacity var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
   user-select: none;
+  scroll-margin-top: 70px;
 }
 
 
