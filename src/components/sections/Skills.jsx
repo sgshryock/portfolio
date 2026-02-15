@@ -15,10 +15,10 @@ const isMobile = () => window.innerWidth <= 768;
 const getBadgeDims = () => {
   const mobile = isMobile();
   return {
-    halfH: mobile ? 16 : 22,
-    padX: mobile ? 24 : 36,
-    charW: mobile ? 6.5 : 8.5,
-    gap: 8,
+    halfH: mobile ? 14 : 22,
+    padX: mobile ? 20 : 36,
+    charW: mobile ? 5.5 : 8.5,
+    gap: mobile ? 4 : 8,
   };
 };
 
@@ -40,7 +40,7 @@ const Skills = () => {
     const mobile = isMobile();
     // On mobile, cap radius so longest badge stays on screen
     const radius = mobile
-      ? Math.min(window.innerWidth / 2 - 80, 130)
+      ? Math.min(window.innerWidth / 2 - 65, 150)
       : Math.min(window.innerWidth * 0.28, 280);
     const dims = getBadgeDims();
 
@@ -89,11 +89,19 @@ const Skills = () => {
           setPhase('closing-slide');
           setTimeout(() => {
             setPhase('closing-fade');
+            const closingCategory = activeCategory;
             setTimeout(() => {
               setPhase('idle');
               setActiveCategory(null);
               setCardStartPos(null);
-              closingRef.current = false;
+              // Wait for layout to settle, then scroll on desktop
+              setTimeout(() => {
+                const cardEl = cardRefs.current[closingCategory];
+                if (cardEl && !isMobile()) {
+                  cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                closingRef.current = false;
+              }, 50);
             }, 250);
           }, 400);
         }, 350);
@@ -110,6 +118,10 @@ const Skills = () => {
     const cardEl = cardRefs.current[category];
     if (!cardEl || !gridRef.current) return;
 
+    // On mobile, anchor the section in view before animating
+    if (isMobile()) {
+      gridRef.current.closest('.skills-section')?.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }
 
     const gridRect = gridRef.current.getBoundingClientRect();
     const cardRect = cardEl.getBoundingClientRect();
@@ -216,7 +228,7 @@ const Skills = () => {
         <div
           className={`skills-grid ${visible ? 'fade-in' : 'fade-in-hidden'}`}
           ref={(el) => { ref.current = el; gridRef.current = el; }}
-          style={isExpanded && phase !== 'fading' && phase !== 'closing-fade' ? { position: 'relative', minHeight: isMobile() ? 400 : 600 } : isExpanded ? { position: 'relative' } : {}}
+          style={isExpanded && phase !== 'fading' && phase !== 'closing-slide' && phase !== 'closing-fade' ? { position: 'relative', minHeight: isMobile() ? 400 : 600 } : isExpanded ? { position: 'relative' } : {}}
         >
           {/* Default card grid */}
           {categories.map(([category]) => {

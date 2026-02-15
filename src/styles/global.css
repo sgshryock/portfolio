@@ -68,6 +68,7 @@ button:focus-visible {
 /* Section base */
 .section {
   padding: 80px 5%;
+  scroll-margin-top: 70px;
 }
 
 .container {
