@@ -5,10 +5,10 @@ import './Navigation.css';
 const navLinks = [
   { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
   { label: 'What I Build', href: '#what-i-build' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
+  // { label: 'Projects', href: '#projects' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -81,19 +81,23 @@ const Navigation = () => {
           <span />
           <span />
         </button>
-        <div className={`nav-links ${menuOpen ? 'nav-links-open' : ''}`}>
+        <ul className={`nav-links ${menuOpen ? 'nav-links-open' : ''}`} role="menubar">
           {navLinks.map(({ label, href }) => (
-            <a
-              key={href}
-              href={href}
-              className={`nav-link ${activeSection === href.slice(1) ? 'active' : ''}`}
-              onClick={closeMenu}
-            >
-              {label}
-            </a>
+            <li key={href} role="none">
+              <a
+                href={href}
+                className={`nav-link ${activeSection === href.slice(1) ? 'active' : ''}`}
+                onClick={closeMenu}
+                role="menuitem"
+              >
+                {label}
+              </a>
+            </li>
           ))}
-          <ThemeToggle />
-        </div>
+          <li role="none">
+            <ThemeToggle />
+          </li>
+        </ul>
       </div>
     </nav>
   );

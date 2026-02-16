@@ -31,6 +31,7 @@ const Skills = () => {
   const [cardStartPos, setCardStartPos] = useState(null);
   const gridRef = useRef(null);
   const cardRefs = useRef({});
+  const floatingCardRef = useRef(null);
   const activeCategoryRef = useRef(null);
 
   const categories = Object.entries(skillsData);
@@ -184,6 +185,12 @@ const Skills = () => {
   }, [activeCategory, closeCategory]);
 
   useEffect(() => {
+    if (phase === 'animating' && floatingCardRef.current) {
+      floatingCardRef.current.focus();
+    }
+  }, [phase]);
+
+  useEffect(() => {
     if (!activeCategory) return;
     const handleResize = () => {
       const { positions, endpoints } = calculatePositions(activeCategory);
@@ -225,7 +232,7 @@ const Skills = () => {
     <section className="section skills-section" id="skills">
       <div className="container">
         <h2 className="section-title" style={{ textAlign: 'center' }}>Skills &amp; Tech Stack</h2>
-        <p className="section-subtitle" style={{ textAlign: 'center' }}>
+        <p className="section-subtitle" style={{ textAlign: 'center' }} aria-live="polite">
           {activeCategory ? 'Click card or press Escape to close' : 'Click a category to explore'}
         </p>
         <div
@@ -244,7 +251,8 @@ const Skills = () => {
                 className={`skill-card glass ${isActive && cardsHidden ? 'skill-card-active' : cardsHidden ? 'skill-card-hidden' : ''}`}
                 onClick={() => !cardsHidden && handleSelect(category)}
                 role="button"
-                tabIndex={0}
+                tabIndex={cardsHidden ? -1 : 0}
+                aria-hidden={cardsHidden ? true : undefined}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -262,6 +270,7 @@ const Skills = () => {
             <>
               {/* Floating card */}
               <div
+                ref={floatingCardRef}
                 className={`skill-card glass skill-card-floating ${phase === 'closing-fade' ? 'skill-card-closing' : ''} ${isCircle ? 'skill-card-circle' : ''}`}
                 style={{
                   position: 'absolute',
@@ -285,6 +294,7 @@ const Skills = () => {
                 onClick={() => handleSelect(activeCategory)}
                 role="button"
                 tabIndex={0}
+                aria-label={activeCategory}
               >
                 <h3 className={`skill-card-title ${phase === 'morphing' || phase === 'closing-badges' || phase === 'closing-lines' || phase === 'closing-morph' || phase === 'closing-slide' ? 'skill-card-title-morphing' : ''}`}>{activeCategory}</h3>
               </div>
@@ -316,8 +326,10 @@ const Skills = () => {
                       />
                     ))}
                   </svg>
+                  <div className="skill-mindmap-nodes" role="list">
                   {skillsData[activeCategory].map((skill, i) => (
                     <span
+                      role="listitem"
                       key={skill}
                       className={`skill-node ${showBadges ? 'skill-node-visible' : ''} ${showBadgeGlow ? 'skill-node-glow' : ''}`}
                       style={{
@@ -329,6 +341,7 @@ const Skills = () => {
                       {skill}
                     </span>
                   ))}
+                  </div>
                 </div>
               </div>
             </>

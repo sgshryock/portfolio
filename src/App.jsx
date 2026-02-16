@@ -12,14 +12,15 @@ import Footer from "./components/layout/Footer";
 const App = () => {
   return (
     <div>
+      <a href="#about" className="skip-link">Skip to main content</a>
       <Navigation />
       <main>
         <Hero />
         <About />
+        <Experience />
         <WhatIBuild />
         <Skills />
-        <Projects />
-        <Experience />
+        {/* <Projects /> */}
         <Education />
         <Contact />
       </main>
