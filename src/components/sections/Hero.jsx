@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="hero-content">
         <h1 className="hero-name">Gordon Shryock</h1>
         <p className="hero-tagline">
-          I build systems, automate operations, and lead teams that deliver.
+          Enterprise DevOps, Platform Modernization &amp; AI-Augmented Delivery
         </p>
       </div>
       <div className="hero-scroll-indicator">

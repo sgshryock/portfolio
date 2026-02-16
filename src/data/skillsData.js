@@ -1,20 +1,17 @@
 export const skillsData = {
-  "Languages & Scripting": [
-    "SQL", "PowerShell", "Python", "PowerOn", "JavaScript", "HTML", "CSS", "Shell/Bash"
+  "Engineering & Development": [
+    "Enterprise Architecture", "Platform Engineering", "SDLC", "AI-Augmented Development", "SQL", "Microsoft SQL Server", "Python"
   ],
-  "Databases & Reporting": [
-    "MSSQL", "PostgreSQL", "MySQL", "SSRS", "SAP Crystal Reports", "SQL Server Report Builder"
+  "DevOps & Cloud": [
+    "DevOps", "CI/CD", "Kubernetes", "Docker", "Cloud Computing"
   ],
-  "DevOps & Infrastructure": [
-    "Docker", "Kubernetes", "Git", "Linux", "Proxmox", "Caddy", "Self-Hosting"
+  "Data & Analytics": [
+    "Data Analysis", "Power BI", "Data Governance", "Financial Acumen", "Auditing"
   ],
-  "Frameworks & Tools": [
-    "React", "Vite", "Node.js", "OpCon", "SharePoint", "Foundry VTT"
-  ],
-  "AI & Automation": [
-    "Claude Code", "Prompt Engineering", "AI-Assisted Development", "LLM Integration", "Workflow Automation"
+  "Governance & Compliance": [
+    "Regulatory Compliance", "Risk Management", "Change Management", "Process Improvement", "Business Process Improvement"
   ],
   "Leadership & Operations": [
-    "Strategic Planning", "Team Management", "Business Development", "Process Improvement"
+    "Engineering Leadership", "Strategic Planning", "Team Management", "Project Management", "Program Management", "Operations Management"
   ],
 };
