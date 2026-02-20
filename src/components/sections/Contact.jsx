@@ -22,6 +22,9 @@ const Contact = () => {
             <a href="https://linkedin.com/in/gordonshryock" target="_blank" rel="noreferrer" className="contact-social-link">
               LinkedIn
             </a>
+            <a href="/Shryock_VP_Resume.pdf" target="_blank" rel="noreferrer" className="contact-social-link">
+              Resume
+            </a>
           </div>
         </div>
       </div>
