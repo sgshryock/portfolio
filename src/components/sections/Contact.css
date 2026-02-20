@@ -24,8 +24,15 @@
   box-shadow: 0 4px 15px var(--color-accent-shadow-40);
 }
 
-.contact-email-btn:hover {
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .contact-email-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--color-accent-shadow-50);
+    color: #ffffff;
+  }
+}
+
+.contact-email-btn:active {
   box-shadow: 0 8px 25px var(--color-accent-shadow-50);
   color: #ffffff;
 }
@@ -47,8 +54,10 @@
   transition: color var(--transition-fast);
 }
 
-.contact-social-link:hover {
-  color: var(--color-accent-hover);
+@media (hover: hover) {
+  .contact-social-link:hover {
+    color: var(--color-accent-hover);
+  }
 }
 
 @media (max-width: 768px) {

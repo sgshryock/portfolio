@@ -35,8 +35,10 @@
   transition: color var(--transition-base);
 }
 
-.nav-logo:hover {
-  color: var(--color-accent);
+@media (hover: hover) {
+  .nav-logo:hover {
+    color: var(--color-accent);
+  }
 }
 
 .nav-links {
@@ -85,11 +87,15 @@
 .nav-hamburger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
   z-index: 1001;
 }
 

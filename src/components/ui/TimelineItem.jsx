@@ -23,18 +23,30 @@ const TimelineItem = ({ type, title, organization, organizationUrl, period, desc
       const viewportCenter = window.innerHeight / 2;
       const scrollOffset = cardCenter - viewportCenter;
 
+      // If already centered (no scroll needed), toggle immediately
+      if (Math.abs(scrollOffset) < 2) {
+        onToggle();
+        return;
+      }
+
       window.scrollBy({ top: scrollOffset, behavior: 'smooth' });
 
+      // Always use a timeout fallback — scrollend can silently fail
+      // on Android when the scroll is interrupted by touch
+      let toggled = false;
+      const doToggle = () => {
+        if (toggled) return;
+        toggled = true;
+        onToggle();
+      };
+
+      const fallbackTimer = setTimeout(doToggle, 600);
+
       if ('onscrollend' in window) {
-        const handler = () => {
-          window.removeEventListener('scrollend', handler);
-          onToggle();
-        };
-        window.addEventListener('scrollend', handler, { once: true });
-      } else {
-        setTimeout(() => {
-          onToggle();
-        }, 500);
+        window.addEventListener('scrollend', () => {
+          clearTimeout(fallbackTimer);
+          doToggle();
+        }, { once: true });
       }
     } else {
       onToggle();

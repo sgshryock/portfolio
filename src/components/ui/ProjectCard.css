@@ -5,9 +5,11 @@
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(31, 38, 135, 0.2);
+@media (hover: hover) {
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(31, 38, 135, 0.2);
+  }
 }
 
 .project-card-image {
@@ -25,8 +27,10 @@
   transition: transform var(--transition-slow);
 }
 
-.project-card:hover .project-card-image img {
-  transform: scale(1.05);
+@media (hover: hover) {
+  .project-card:hover .project-card-image img {
+    transform: scale(1.05);
+  }
 }
 
 .project-card-placeholder {
@@ -53,7 +57,12 @@
   transition: opacity var(--transition-base);
 }
 
-.project-card:hover .project-card-overlay,
+@media (hover: hover) {
+  .project-card:hover .project-card-overlay {
+    opacity: 1;
+  }
+}
+
 .project-card:focus-within .project-card-overlay {
   opacity: 1;
 }
@@ -68,9 +77,11 @@
   transition: transform var(--transition-fast);
 }
 
-.project-link:hover {
-  transform: scale(1.05);
-  color: #1a1a2e;
+@media (hover: hover) {
+  .project-link:hover {
+    transform: scale(1.05);
+    color: #1a1a2e;
+  }
 }
 
 .project-card-links {
@@ -89,9 +100,11 @@
   transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-.project-card-links .project-link-visible:hover {
-  background: var(--color-accent);
-  color: #ffffff;
+@media (hover: hover) {
+  .project-card-links .project-link-visible:hover {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
 }
 
 .project-card-content {

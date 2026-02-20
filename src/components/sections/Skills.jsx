@@ -81,6 +81,15 @@ const Skills = () => {
     if (closingRef.current) return;
     closingRef.current = true;
 
+    // Safety timeout — if the chain stalls on a slow device, force-reset
+    const safetyTimer = setTimeout(() => {
+      setPhase('idle');
+      setActiveCategory(null);
+      activeCategoryRef.current = null;
+      setCardStartPos(null);
+      closingRef.current = false;
+    }, 2500);
+
     // Reverse: badges fade → lines fade → unmorph → slide back → cards fade in
     setPhase('closing-badges');
     setTimeout(() => {
@@ -93,6 +102,7 @@ const Skills = () => {
             setPhase('closing-fade');
             const closingCategory = activeCategoryRef.current;
             setTimeout(() => {
+              clearTimeout(safetyTimer);
               setPhase('idle');
               setActiveCategory(null);
               activeCategoryRef.current = null;

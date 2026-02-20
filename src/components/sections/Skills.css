@@ -20,9 +20,11 @@
 }
 
 
-.skill-card:hover {
-  box-shadow: 0 0 10px var(--color-accent-shadow-40), 0 0 18px var(--color-accent-shadow-40);
-  border-color: var(--color-accent);
+@media (hover: hover) {
+  .skill-card:hover {
+    box-shadow: 0 0 10px var(--color-accent-shadow-40), 0 0 18px var(--color-accent-shadow-40);
+    border-color: var(--color-accent);
+  }
 }
 
 .skill-card-title {
@@ -176,10 +178,12 @@
   border-color: var(--color-accent);
 }
 
-.skill-node:hover {
-  background: var(--color-accent);
-  color: #ffffff;
-  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background var(--transition-fast), color var(--transition-fast);
+@media (hover: hover) {
+  .skill-node:hover {
+    background: var(--color-accent);
+    color: #ffffff;
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background var(--transition-fast), color var(--transition-fast);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -207,11 +211,6 @@
 @media (max-width: 768px) {
   .skill-card {
     width: 100%;
-  }
-
-  .skill-card:not(.skill-card-floating):hover {
-    box-shadow: none;
-    border-color: transparent;
   }
 
   .skill-card:not(.skill-card-floating):active {

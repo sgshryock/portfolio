@@ -92,9 +92,15 @@
   transition: box-shadow var(--transition-base), transform var(--transition-base);
 }
 
-.timeline-content.expandable:hover {
+@media (hover: hover) {
+  .timeline-content.expandable:hover {
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+    transform: translateX(6px);
+  }
+}
+
+.timeline-content.expandable:active {
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
-  transform: translateX(6px);
 }
 
 .timeline-expand-indicator {
