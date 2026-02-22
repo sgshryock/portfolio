@@ -10,6 +10,8 @@ export const experienceData = [
       "Partner with executive leadership to align technology roadmaps with regulatory requirements, risk mitigation priorities, and long-term organizational strategy",
       "Led enterprise-wide DevOps modernization initiative reducing deployment cycle time by 40% and strengthening release reliability and governance controls",
       "Implemented enterprise data validation and reporting frameworks improving financial accuracy by 30% and reinforcing executive decision support capabilities",
+      "Designed and implemented a full inventory system for new-building vending machine and supply management, enabling accountability, reorder controls, and real-time visibility",
+      "Rebuilt the loan quote application with document attachment, version control, approval control, loan quote comments, and administrative settings to strengthen governance and streamline approvals",
       "Leverage AI-assisted workflows as a force multiplier in executive planning, architectural decision support, and production-grade development",
       "Established governance standards, scalable development practices, and structured change management controls to support controlled modernization at scale",
     ],
