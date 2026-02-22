@@ -4,7 +4,7 @@ export const experienceData = [
     title: "VP of Development",
     organization: "Florida Credit Union",
     organizationUrl: "https://www.flcu.org",
-    period: "Mar 2025 — Present",
+    period: "Jan 2025 — Present",
     description: "Direct cross-functional engineering and computer operations functions supporting mission-critical financial, compliance, and operational systems within a regulated enterprise environment.",
     highlights: [
       "Partner with executive leadership to align technology roadmaps with regulatory requirements, risk mitigation priorities, and long-term organizational strategy",
@@ -19,7 +19,7 @@ export const experienceData = [
     title: "AVP of Development",
     organization: "Florida Credit Union",
     organizationUrl: "https://www.flcu.org",
-    period: "Jan 2021 — Mar 2025",
+    period: "Jan 2021 — Jan 2025",
     description: "Led two engineering teams delivering enterprise financial systems and internal automation platforms.",
     highlights: [
       "Directed development of a Commercial Loan Onboarding Platform reducing manual entry and eliminating processing errors",
