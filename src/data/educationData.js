@@ -3,7 +3,7 @@ export const educationData = [
     title: "Bachelors in Information Systems Technology, Programming",
     organization: "Santa Fe College",
     organizationUrl: "https://www.sfcollege.edu",
-    period: "Expected 2027",
+    period: "Expected May 2027",
     status: "In Progress",
   },
   {

@@ -6,12 +6,12 @@ export const skillsData = {
     "DevOps", "CI/CD", "Kubernetes", "Docker", "Cloud Computing"
   ],
   "Data & Analytics": [
-    "Data Analysis", "Power BI", "Data Governance", "Financial Acumen", "Auditing"
+    "Data Analysis", "Power BI", "Data Warehousing", "Data Governance", "Financial Acumen", "Auditing"
   ],
   "Governance & Compliance": [
-    "Regulatory Compliance", "Risk Management", "Change Management", "Process Improvement", "Business Process Improvement"
+    "Regulatory Compliance", "AI Governance", "Risk Management", "Change Management", "Process Improvement", "Business Process Improvement"
   ],
   "Leadership & Operations": [
-    "Engineering Leadership", "Strategic Planning", "Team Management", "Project Management", "Program Management", "Operations Management"
+    "Engineering Leadership", "Strategic Planning", "Team Management", "Vendor Management", "Project Management", "Program Management", "Operations Management"
   ],
 };

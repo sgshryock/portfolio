@@ -17,7 +17,7 @@ const About = () => {
           <div className="about-text">
             <h2 className="section-title">About Me</h2>
             <p className="about-bio">
-              I'm an enterprise engineering leader with 9+ years of progressive
+              I'm an enterprise engineering leader with 8+ years of progressive
               experience modernizing financial and operational systems within
               regulated environments. I've grown from writing code to leading
               the teams that write it — driving DevOps transformation that
@@ -26,7 +26,8 @@ const About = () => {
               improved financial accuracy by 30%.
             </p>
             <p className="about-bio">
-              Outside of work, I'm pursuing a degree in software development,
+              Outside of work, I'm finishing my BS in Information Systems
+              Technology (expected May 2027),
               running a homelab, 3D printing, and always picking up something new.
             </p>
           </div>
