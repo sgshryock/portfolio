@@ -22,17 +22,16 @@ export const experienceData = [
   },
   {
     type: "work",
-    title: "AVP of Development",
+    title: "AVP / Developer Lead",
     organization: "Florida Credit Union",
     organizationUrl: "https://www.flcu.org",
     period: "2021 — 2025",
-    description: "Led two engineering teams delivering enterprise financial systems and internal automation platforms.",
+    description: "Led 5 direct reports across two teams delivering enterprise applications and internal automation platforms.",
     highlights: [
-      "Directed development of a Commercial Loan Onboarding Platform reducing manual entry and eliminating processing errors",
-      "Architected a Commercial Pricing Module eliminating 100% of loan approval discrepancies and strengthening compliance integrity",
-      "Spearheaded enterprise CI/CD implementation preventing 278 production defects in its first year",
-      "Implemented containerized deployment strategies supporting scalable and resilient system architecture",
-      "Delivered collaboration platform modernization reducing internal email volume by 80% and improving cross-functional efficiency",
+      "Directed development of an enterprise onboarding platform for regulated workflows, reducing manual entry and eliminating errors",
+      "Built a pricing and approvals module for regulated decisioning that eliminated approval discrepancies and strengthened controls",
+      "Spearheaded GitLab CI/CD adoption, preventing 278 production bugs in its first year",
+      "Implemented a SharePoint intranet, reducing internal email traffic by 80% and improving collaboration",
     ],
   },
   {
@@ -41,12 +40,10 @@ export const experienceData = [
     organization: "Florida Credit Union",
     organizationUrl: "https://www.flcu.org",
     period: "Dec 2017 — 2021",
-    description: "Designed and developed enterprise financial and operational applications supporting lending, compliance, and internal automation initiatives.",
+    description: "Designed and developed enterprise applications supporting regulated operations and internal automation initiatives.",
     highlights: [
       "Engineered database-driven reporting and validation systems improving data integrity and operational accuracy",
-      "Collaborated with cross-functional stakeholders to translate regulatory and business requirements into scalable system solutions",
       "Built automated workflows and reporting tools reducing manual processes and strengthening internal controls",
-      "Contributed to early DevOps and CI/CD adoption efforts, establishing foundations for scalable modernization initiatives",
     ],
   },
   {
@@ -55,11 +52,11 @@ export const experienceData = [
     organization: "Veterans Trading Co",
     organizationUrl: "https://vtcusa.com/",
     period: "2015 — 2017",
-    description: "Led configuration and inventory systems modernization supporting defense manufacturing operations.",
+    description: "Led a team of 3 overseeing configuration and inventory systems for defense manufacturing.",
     highlights: [
-      "Designed analytics dashboards reducing excess inventory carrying value by 70% while improving forecasting accuracy",
+      "Designed a Power BI inventory dashboard that reduced excess inventory carrying value by 70% while improving demand forecasting",
       "Directed implementation of smart inventory systems integrating automated imports and real-time reporting",
-      "Partnered with major defense contractors to improve production planning efficiency and reduce operational risk",
+      "Partnered with Lockheed Martin on supply chain planning, improving production efficiency and reducing risk",
     ],
   },
   {

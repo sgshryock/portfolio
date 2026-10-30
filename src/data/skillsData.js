@@ -1,17 +1,20 @@
 export const skillsData = {
-  "Engineering & Development": [
-    "Enterprise Architecture", "Platform Engineering", "SDLC", "Release Management", "AI-Augmented Development", "C#", ".NET", "REST APIs", "SQL", "Microsoft SQL Server", "Python"
+  "Software Engineering": [
+    "C#", ".NET", "Python", "SQL Server", "REST APIs", "React", "SDLC"
   ],
-  "DevOps & Cloud": [
-    "DevOps", "CI/CD", "Kubernetes", "Docker", "Cloud Computing"
+  "DevOps & Release": [
+    "CI/CD", "GitLab", "Docker", "Kubernetes", "PowerShell", "Release Management"
   ],
-  "Data & Analytics": [
-    "Data Analysis", "Power BI", "Data Warehousing", "Business Intelligence", "Data Governance", "Data Quality", "Data Disaster Recovery", "Financial Acumen", "Auditing"
+  "Data & BI": [
+    "Data Warehousing", "Power BI", "Data Governance", "Data Quality", "Data Recovery", "Reporting"
   ],
-  "Governance & Compliance": [
-    "Regulatory Compliance", "NCUA Audit Support", "Vendor Risk & SOC 2 Review", "Web Accessibility (ADA)", "Policy Development", "AI Governance", "Risk Management", "Change Management", "Process Improvement", "Business Process Improvement"
+  "Governance & Risk": [
+    "Regulatory Compliance", "NCUA Audits", "SOC 2 Review", "ADA Compliance", "Policy Development", "Risk Management"
   ],
-  "Leadership & Operations": [
-    "Engineering Leadership", "Strategic Planning", "Team Management", "Vendor Management", "Contract Negotiation", "Project Management", "Program Management", "Operations Management"
+  "AI": [
+    "AI Governance", "AI Guardrails", "Claude", "OpenAI", "AI-Assisted Dev"
+  ],
+  "Leadership": [
+    "Engineering Leadership", "Talent Development", "Vendor Management", "Contract Negotiation", "Budget Planning", "Agile Delivery"
   ],
 };

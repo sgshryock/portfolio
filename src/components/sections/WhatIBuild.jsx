@@ -10,7 +10,7 @@ const WhatIBuild = () => {
       <div className="container">
         <h2 className="section-title" style={{ textAlign: 'center' }}>What I Build</h2>
         <p className="section-subtitle" style={{ textAlign: 'center' }}>
-          Enterprise systems and solutions I've delivered — built to last, not to demo.
+          Enterprise systems and programs I've delivered and own — built to last, not to demo.
         </p>
         <div className={`wib-grid ${visible ? 'fade-in' : 'fade-in-hidden'}`} ref={ref}>
           {accomplishmentsData.map((item) => (
