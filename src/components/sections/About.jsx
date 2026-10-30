@@ -17,13 +17,15 @@ const About = () => {
           <div className="about-text">
             <h2 className="section-title">About Me</h2>
             <p className="about-bio">
-              I'm an enterprise engineering leader with 8+ years of progressive
-              experience modernizing financial and operational systems within
-              regulated environments. I've grown from writing code to leading
-              the teams that write it — driving DevOps transformation that
-              cut deployment cycles by 40%, CI/CD initiatives that prevented
-              278 production defects in year one, and data frameworks that
-              improved financial accuracy by 30%.
+              I'm a credit union technology executive with 8+ years in the
+              industry, including 5+ years in management. I've grown from
+              writing code to leading the development and computer operations
+              teams that build and support regulated systems — owning enterprise
+              data governance, data warehouse disaster recovery, and reporting
+              for NCUA and internal audits. Along the way I've driven CI/CD
+              that cut deployment cycles by 40% and prevented 278 production
+              defects in year one, and validation controls that improved data
+              accuracy by 30%.
             </p>
             <p className="about-bio">
               Outside of work, I'm finishing my BS in Information Systems

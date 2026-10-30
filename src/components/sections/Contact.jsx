@@ -10,7 +10,7 @@ const Contact = () => {
         <div className={`contact-card glass ${visible ? 'fade-in' : 'fade-in-hidden'}`} ref={ref}>
           <h2 className="section-title">Get In Touch</h2>
           <p className="contact-desc">
-            Open to conversations about engineering leadership, platform modernization, and enterprise delivery.
+            Open to conversations about software engineering, data, and technology leadership.
           </p>
           <a href="mailto:gordon@shryock.io" className="contact-email-btn">
             Let's Connect
